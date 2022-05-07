@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The arm to rule'em all</title>
+</head>
+<body>
+    <h1>The arm to rule'em all</h1>
+    <p>Dedo 1: <span id="servoPos1"></span></p>
+    <input type="range" min="0" max="180" class="slider" id="servoSlider1" onchange="servo(this.value)" value=""/>
+
+    <p>Dedo 2: <span id="servoPos2"></span></p>
+    <input type="range" min="0" max="180" class="slider" id="servoSlider2" onchange="servo(this.value)" value=""/>
+
+    <p>Dedo 3: <span id="servoPos3"></span></p>
+    <input type="range" min="0" max="180" class="slider" id="servoSlider3" onchange="servo(this.value)" value=""/>
+
+    <p>Dedo 4: <span id="servoPos4"></span></p>
+    <input type="range" min="0" max="180" class="slider" id="servoSlider4" onchange="servo(this.value)" value=""/>
+
+    <p>Dedo 5: <span id="servoPos5"></span></p>
+    <input type="range" min="0" max="180" class="slider" id="servoSlider5" onchange="servo(this.value)" value=""/>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var slider1=document.getElementById("servoSlider1");
+        var slider2=document.getElementById("servoSlider2");
+        var slider3=document.getElementById("servoSlider3");
+        var slider4=document.getElementById("servoSlider4");
+        var slider5=document.getElementById("servoSlider5");
+        
+        var pos1=document.getElementById("servoPos1");
+        var pos2=document.getElementById("servoPos2");
+        var pos3=document.getElementById("servoPos3");
+        var pos4=document.getElementById("servoPos4");
+        var pos5=document.getElementById("servoPos5");
+
+        pos1.innerHTML=slider1.value;
+        pos2.innerHTML=slider2.value;
+        pos3.innerHTML=slider3.value;
+        pos4.innerHTML=slider4.value;
+        pos5.innerHTML=slider5.value;
+
+        slider1.oninput=function(){
+            slider1.value=this.value;
+            pos1.innerHTML=this.value;
+        }
+
+        slider2.oninput=function(){
+            slider2.value=this.value;
+            pos2.innerHTML=this.value;
+        }
+
+        slider3.oninput=function(){
+            slider3.value=this.value;
+            pos3.innerHTML=this.value;
+        }
+
+        slider4.oninput=function(){
+            slider4.value=this.value;
+            pos4.innerHTML=this.value;
+        }
+
+        slider5.oninput=function(){
+            slider5.value=this.value;
+            pos5.innerHTML=this.value;
+        }
+
+        $.ajaxSetup({timeout:1000})
+       
+        function servo(pos){
+            $.get("/?value=+pos+&");
+            {Connection:close};
+        }
+    </script>
+</body>
+</html>
