@@ -5,6 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The arm to rule'em all</title>
+<style>
+    body{
+        text-align: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .slider{
+        width: 300px;
+    }
+    #servoSlider1{
+        accent-color: rgb(255, 0, 0) 
+    }
+    #servoSlider2{
+        accent-color: rgb(221, 255, 0)
+    }
+    #servoSlider3{
+        accent-color: rgb(0, 42, 255)
+    }
+    #servoSlider4{
+        accent-color: rgb(255, 145, 0)
+    }
+    #servoSlider5{
+        accent-color: rgb(255, 0, 221)
+    }
+</style>
 </head>
 <body>
     <h1>The arm to rule'em all</h1>
@@ -70,8 +96,24 @@
 
         $.ajaxSetup({timeout:1000})
        
-        function servo(pos){
-            $.get("/?value=+pos+&");
+        function servo1(pos){
+            $.get("/?value1="+pos+"&");
+            {Connection:close};
+        }
+        function servo2(pos){
+            $.get("/?value2="+pos+"&");
+            {Connection:close};
+        }
+        function servo3(pos){
+            $.get("/?value3="+pos+"&");
+            {Connection:close};
+        }
+        function servo4(pos){
+            $.get("/?value4="+pos+"&");
+            {Connection:close};
+        }
+        function servo5(pos){
+            $.get("/?value5="+pos+"&");
             {Connection:close};
         }
     </script>
